@@ -73,6 +73,8 @@ namespace csv
         unsigned int columnCount(void) const;
         std::vector<std::string> getHeader(void) const;
         const std::string getHeaderElement(unsigned int pos) const;
+        std::vector<std::string> getColumn(unsigned int pos) const;
+		std::vector<std::string> getColumn(const std::string &key) const;
         const std::string &getFileName(void) const;
 
     public:
