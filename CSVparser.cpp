@@ -133,6 +133,31 @@ namespace csv {
       return _header[pos];
   }
 
+  std::vector<std::string> Parser::getColumn(unsigned int pos) const
+  {
+	  std::vector<std::string> column_content;
+	  for (unsigned int i=0; i<_content.size(); ++i)
+	  {
+		  column_content.push_back(getRow(i)[pos]);
+	  }
+	  return column_content;
+  }
+  std::vector<std::string> Parser::getColumn(const std::string &key) const
+  {
+	  std::vector<std::string>::const_iterator it;
+	  int pos = 0;
+
+	  for (it = _header.begin(); it != _header.end(); it++)
+	  {
+		  if (key == *it)
+		  {
+			  break;
+		  }
+		  pos++;
+	  }
+	  return getColumn(pos);  
+  }
+  
   bool Parser::deleteRow(unsigned int pos)
   {
     if (pos < _content.size())
