@@ -3,6 +3,15 @@ CSVparser
 
 CSVparser intends to be a simple C++ parser for the CSV file format.
 
+update list (by marcello)
+----------------
+
+2017.11.14:
+1. change "auto" syntax, in order to make this library suitable for VS2008
+2. add getColumn function
+
+
+
 What is a CSV file ?
 --------------------
 
